@@ -31,11 +31,11 @@ var all = {
     },
     cookieParser: 'wenjie',
     cookieSecret: 'keyboard cat',
-    host: 'http://dingdangmarket.duapp.com/',
+    host: 'http://**.com/',
     loginUserName: '123456@qq.com',
     loginPwd: '123456',
-    appid: 'wxa0eceea757ee8d55',
-    secret: '55e7301fbdfb45bda97492e189eef8e3'
+    appid: '',
+    secret: ''
 };
 
 module.exports = _.merge(
