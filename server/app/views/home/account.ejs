@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0, maxinum-scale=1.0, user-scalable=0">
+
+	<title><%= title %></title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/account.css">
+</head>
+<body>
+	<header>
+		<div class="left">
+			<i class="iconfont back" >&#xe601;</i>
+		</div>
+		<div class="right">
+			<div class="title">结算</div>
+		</div>
+	</header>
+
+	<div id="content">
+		<h4><i class="iconfont">&#xe618;</i>收货地址</h4>
+		<form>
+			<% for(var i=0; i < customer.length; i++) {%>
+				<div class="form-group">
+					<div class="left-group">
+						<input type="radio" name="chooseAddress" value="defaultInfo" checked="checked"/>
+					</div>
+					<div class="right-group">
+						<span class="defaultInfo-area" data-area="<%= customer[i].defaultInfo.area %>"><%= customer[i].defaultInfo.area %></span>
+						 <span class="defaultInfo-address" data-address="<%= customer[i].defaultInfo.address %>"> <%= customer[i].defaultInfo.address %></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="right-group">
+					<span class="defaultInfo-linkman" data-linkman="<%= customer[i].defaultInfo.linkman %>"><%= customer[i].defaultInfo.linkman %></span> ,
+					<span class="defaultInfo-phone" data-phone="<%= customer[i].defaultInfo.phone %>"><%= customer[i].defaultInfo.phone %></span>
+						
+					</div>
+				</div>
+			<% } %>
+			<div class="form-group">
+				<div class="left-group">
+					<% if(customer.length) { %><input type="radio" name="chooseAddress"  value="newInfo"/>
+					<% } else { %>  <input type="radio" name="chooseAddress"  value="newInfo" checked="checked"/> <% } %>
+				</div>
+				<div class="right-group">
+					
+						<select class="area" name="area">
+						      <option value="">校区</option>
+							  <option value="华山区">华山区</option>
+							  <option value="五山区">五山区</option>
+							  <option value="启林区">启林区</option>
+						</select>
+						<input type="text" class="control address" placeholder="地址（xx栋/xx宿舍）" name="address">
+					</div>
+			</div>
+
+				
+			<div class="form-group">
+				<div class="right-group">
+					<input type="text" class="linkman" placeholder="联系人" name="linkman">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="right-group">
+					<input type="text" class="phone" placeholder="13位长号" name="phone">
+				</div>
+			</div>
+		
+			<div class="warning-info">
+				<span>!手机格式错误 应为11为长号~</span>
+			</div>
+		
+
+		<h4><i class="iconfont">&#xe616;</i>支付方式</h4>
+		<div class="form-group">
+				<div class="left-group">
+					<input type="radio" name="payWay"  value="" checked="checked"/>  
+				</div>
+				<div class="right-group">
+					<span>货到付款(暂时仅提供该支付方式)</span>
+				</div>
+		</div>
+		
+		<h4><i class="iconfont">&#xe619;</i>填写备注</h4>
+		
+			<div class="right-group">
+				<textarea  class="remarks" name="remarks" id="" cols="30" rows="4" placeholder="在此填写特殊要求，部分要求可能因客观原因无法达成>3<，敬请谅解"></textarea>
+			</div>
+	
+		</form>
+		<button class="submit" id="submit">
+			结算
+		</button>
+		
+
+
+	</div>
+
+	<footer>
+			 2014-2015 @ 吃哩吃哩 
+	</footer>
+	<script src="../bower_components/zepto/zepto.min.js"></script>
+	<script src="../js/zepto.cookie.min.js"></script>
+	<script src="../js/account.js"></script>
+	
+	
+
+</body>
+</html>

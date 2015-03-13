@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=decice-width, initial-scale=1.0, maxinum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <span id="back-2" class="left">返回</span>
+        <span id="back-3" class="left">返回</span>
+        <span>叮当</span>
+    </header>
+
+    <div class="products" id="screen-1">
+        <div class="banner screen-1">
+            <img src="images/banenr.png" alt=""/>
+        </div>
+        <div class="menuWrap">
+            <% if(classifys.length) { %>
+            <ul class="menu">
+                <% for(var i=0, len = classifys.length; i < len; i++){
+                    if(i == 0) {%>
+                        <li data-id="<%= classifys[i]._id %>" class="selected"><span class="spot">0</span><span> <%= classifys[i].name %></span></li>
+                    <%  } else { %>
+                    <li data-id="<%= classifys[i]._id %>"><span class="spot">0</span><span> <%= classifys[i].name %></span></li>
+                <% }} %>
+            </ul>
+            <% } %>
+        </div>
+        <div class="listWrap">
+            <ul class="list">
+                <li class="selected">
+                    <div class="listUp"></div>
+                    <% products.forEach(function(product){ %>
+                    <div class="oneWrap">
+                        <div class="one" data-id="<%= product._id %>">
+                            <span class="spot">0</span>
+                            <img src="<%= product.img %>" alt=""/>
+                            <p class="title"> <span class="name"><%= product.name %></span> <span class="remark"><%= product.description %></span></p>
+                            <span class="value"><b><%= product.value %></b>元/份</span>
+                        </div>
+                    </div>
+                     <%  }); %>
+
+                </li>
+                <li>
+                
+                </li>
+                <li>
+                  
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="shop">
+            <i class="iconfont">&#xf0079 <span class="spot">0</span></i>
+            <span >¥<span class="value">0</span></span>
+            <span class="buy" id="buy-1">点好了</span>
+        </div>
+    </div>
+
+    <form enctype="application/json" id="form-1">
+        <div class="hide">
+        </div>
+        <div id="screen-2">
+            <div class="header">
+                确认餐品
+            </div>
+            <div class="order products-wrap">
+                
+            </div>
+
+            <div class="order">
+                <div class="field"  >
+                    <span class="name">配送费</span>
+                <span class="order-c-wrap">
+                    <span class="unit">¥</span>
+                    <span class="price" name="freight">0</span>
+                </span>
+                </div>
+                <div class="field" >
+                    <span class="name">总价</span>
+                <span class="order-c-wrap">
+                    <span class="unit">¥</span>
+                    <span class="price"  name="valueSum">0</span>
+                </span>
+                </div>
+            </div>
+
+
+
+            <div id="buy-2" class="mySubmit">
+                去下单
+            </div>
+
+        </div>
+        <div id="screen-3">
+            <div class="header-3">
+                <span >你好，黄文杰</span>
+            </div>
+            <div class="fieldWrap">
+                <div class="field">
+                    <span>手机</span><input type="number" pattern="\d{11}" name="phone" placeholder="请填写你的手机号码"  required/>
+                </div>
+                <div class="field">
+                    <span>地址</span><input type="text" name="address" placeholder="请填写你的地址" required/>
+                </div>
+                <div class="field">
+                    <span>备注</span><input type="text" name="remarks" placeholder="请填写你的备注" required/>
+                </div>
+                <div class="warningInfo">
+                </div>
+            </div>
+            
+           <div class="fieldWrap way">
+               <div class="field">
+                   <span>货到付款</span>
+               </div>
+               <div class="field">
+                   <span>送达时间</span>
+               </div>
+           </div>
+
+
+            <div id="buy-3" class="mySubmit">
+                提交订单
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<script src="bower_components/zepto/zepto.min.js"></script>
+<script src="js/index-2.js"></script>
+</body>
+</html>

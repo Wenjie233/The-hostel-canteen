@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/iconfont.woff') format('woff'), /* chrome、firefox */ url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../font/iconfont.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+}
+.container {
+  margin: 40px 10% 20px;
+  box-shadow: 0px 0px 10px #20DF32;
+  background-color: white;
+}
+.container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+header {
+  background: #03a9f4;
+  height: 50px;
+  box-shadow: 0px 2px 5px #888888;
+}
+header .left {
+  float: left;
+  width: 13%;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+header .left i {
+  color: #ffffff;
+  font-size: 25px;
+}
+header .right {
+  float: right;
+  width: 87%;
+  height: 100%;
+}
+header .title {
+  color: #ffffff;
+  font-size: 20px;
+  height: 100%;
+  line-height: 50px;
+}
+#content {
+  padding: 5%;
+}
+#content .info {
+  font-size: 20px;
+  margin: 10px 0;
+}
+#content .info i {
+  text-align: center;
+  width: 10%;
+  display: inline-block;
+  font-size: 23px;
+  color: #0e9d57;
+}
+#content .tips {
+  padding-left: 10%;
+  color: #999999;
+  font-size: 10px;
+  margin-bottom: 50px;
+}
+#content .gohome {
+  background-color: #0e9d57;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px #000000;
+  margin-bottom: 14px;
+  padding: 0px;
+  border: 0;
+  width: 112px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #ffffff;
+  float: right;
+  text-align: center;
+}
+footer {
+  position: fixed;
+  bottom: 2%;
+  width: 100%;
+  clear: both;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+  padding-bottom: 10px;
+}

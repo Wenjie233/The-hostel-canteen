@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0, maxinum-scale=1.0, user-scalable=0">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<input type="hidden" value="<%= userInfo.nickname %>" name="wechatInfo.nickname">
+	<input type="hidden" value="<%= userInfo.openid %>" name="wechatInfo.openid">
+	
+	<div id="home">
+		<header>
+			<div id="logo">
+				<img  class="userheadimg" src="<%= userInfo.headimgurl %>" alt="">
+			</div>
+			<div id="logo-right">
+				<div class="title">吃狸</div>
+				<div class="classify">
+					<div>所有分类 <i class="iconfont arrow-down">&#xe605;</i> <i class="iconfont arrow-up">&#xe60b;</i> </div>
+					<% if(classifys.length) { %>
+					<ul class="out-classify">
+						<% for(var i=0, len = classifys.length; i < len; i++){
+		                    if(i == 0) {%>
+		                      <a href="#<%= classifys[i]._id %>">  <li data-id="<%= classifys[i]._id %>" > <%= classifys[i].name %></li></a>
+		                    <%  } else { %>
+		                   <a href="#<%= classifys[i]._id %>">  <li data-id="<%= classifys[i]._id %>"> <%= classifys[i].name %> </li></a>
+		                <% }} %>
+					</ul>
+
+					<% } %>
+				</div>
+				<div class="mask"></div>
+
+				<div class="shop">
+					<div class="info">点击图片即可选购</div>
+					<div id="shop-info"><span class="allCount">0</span>件,共<span class="valueSum">0</span>元</div>
+					<div id="cart" class="ban"><i class="iconfont">&#xe60f;</i></div>
+				</div>
+			</div>
+		</header>
+		<div id="content">
+			
+			<ul class="pro-group">
+				<% if(classifys.length) { %>
+					<% for(var i=0, len = classifys.length; i < len; i++){ %>
+							<li class="all-pro-wrap selected">
+								<h3 class="title" id="<%= classifys[i]._id %>"><%= classifys[i].name %></h3> 
+								<%  products.forEach(function(product){ 
+										if(classifys[i]._id == product.classifyId) {%>
+											<div class="pro-wrap">
+												<div class="pro" data-id="<%= product._id %>">
+													<div class="shade">
+														 <i class="iconfont del">&#xe60c;</i>
+														<div class="count">0</div>
+													</div>
+													<div class="img-wrap">
+													<img src="<%= product.img %>" alt="" class="img">
+												</div>
+													<div class="info">
+													<span class="name"><%= product.name %></span>
+													<div class="price"><b><%= product.value %></b> 元/份</div>
+													</div>
+												</div>
+											</div>
+								<%  }}); %>
+							</li>
+				<% }}%>
+
+				
+			</ul>
+		</div>
+
+
+		<footer>
+			 2014-2015 @ 吃哩吃哩 
+		</footer>
+	</div>
+
+	<div id="shop-cart" >
+		<header>
+			<div class="header-left">
+				<i class="iconfont" id="backHome">&#xe601;</i>
+			</div>
+			<div class="header-right">
+				<div class="title">购物车</div>
+				<div class="info">
+					劲情选购你喜爱的零食，么么哒<span class="allCount"></span><span class="valueSum"></span>
+				</div>
+			</div>
+		</header>
+		<div class="detail">
+			<h4>清单</h4>
+			<ul>
+
+				<li>
+					<div class="img">
+						<img src="images/miao.jpg" alt="">
+					</div>
+					<div class="name">
+						<span class="price">1</span>元/件 咪咪 30G 小包装
+					</div>
+					<div class="amount">
+						<button class="reduce"><i class="iconfont">&#xe60c;</i></button>
+						<div class="num">1</div>
+						<button class="add"><i class="iconfont">&#xe603;</i></button>
+					</div>
+					<div class="priceSum">
+						¥ 100
+					</div>
+				</li>
+				<li>
+					<div class="img">
+						<img src="images/miao.jpg" alt="">
+					</div>
+					<div class="name">
+						<span class="price">1</span>元/件 咪咪 30G 小包装
+					</div>
+					<div class="amount">
+						<button class="reduce"><i class="iconfont">&#xe612;</i></button>
+						<div class="num">1</div>
+						<button class="add"><i class="iconfont">&#xe603;</i></button>
+					</div>
+					<div class="priceSum">
+						¥ <b>100</b>
+					</div>
+				</li>
+			</ul>
+			<div class="remark">
+				满10元免递送费(送到宿舍门口哟)
+			</div>
+			<div class="freight">
+				运费 <span>¥ <b>1</b></span>
+			</div>
+			<div class="total">
+				合计(含运费) <span>¥ <b>200</b></span>
+			</div>
+			<button class="submit" id="submit">
+				结算
+			</button>
+
+		</div>
+		<footer>
+			 2014-2015 @ 吃哩吃哩 
+		</footer>
+	</div>
+	<script src="bower_components/zepto/zepto.min.js"></script>
+	<script src="js/zepto.cookie.min.js"></script>
+	<script src="js/index.js"></script>
+	
+</body>
+</html>

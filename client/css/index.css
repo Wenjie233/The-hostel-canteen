@@ -1,0 +1,476 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-size: 62.5%;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/iconfont.woff') format('woff'), /* chrome、firefox */ url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../font/iconfont.svg#uxiconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hide {
+  display: none!important;
+}
+.show {
+  display: block!important;
+}
+.shop {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.4rem;
+  bottom: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.shop .iconfont {
+  margin-left: 10px;
+  font-size: 2.9rem;
+  position: relative;
+}
+.shop .iconfont .spot {
+  position: absolute;
+  text-align: center;
+  display: none;
+  right: 0px;
+  top: 0px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  /* 老的 Firefox */
+  background-color: #a63737;
+  height: 16px;
+  line-height: 16px;
+  width: 16px;
+  font-size: 10px;
+}
+.shop .value {
+  margin-left: 5px;
+  font-size: 1.8rem;
+}
+.shop .buy {
+  font-weight: bold;
+  display: inline-block;
+  float: right;
+  padding: 0 25px;
+  margin: 6px;
+  height: 28px;
+  line-height: 28px;
+  background-color: #a63737;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  /* 老的 Firefox */
+}
+header {
+  height: 40px;
+  font-size: 2.0rem;
+  line-height: 40px;
+  text-align: center;
+  background-color: #a63737;
+  color: white;
+}
+header span.left {
+  position: absolute;
+  left: 10px;
+}
+.banner img {
+  width: 100%;
+  height: 100px;
+}
+.products {
+  overflow: hidden;
+}
+.products .menuWrap {
+  width: 25%;
+  float: left;
+  height: 100%;
+  border-top: 1px solid #dddddd;
+}
+.products .menuWrap .menu {
+  border-right: 1px solid #dddddd;
+  height: 100%;
+}
+.products .menuWrap .menu li {
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+  height: 35px;
+  font-size: 1.2rem;
+  line-height: 35px;
+}
+.products .menuWrap .menu li .spot {
+  position: absolute;
+  display: none;
+  right: 1px;
+  top: 1px;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+  font-weight: 200;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  /* 老的 Firefox */
+  background-color: #a63737;
+  color: white;
+}
+.products .menuWrap .menu li span {
+  margin-left: 5px;
+}
+.products .menuWrap .menu li.selected {
+  color: orange;
+}
+.products .listWrap {
+  width: 75%;
+  float: left;
+  border-top: 1px solid #dddddd;
+}
+.products .listWrap .listUp {
+  height: 20px;
+  background-color: #dddddd;
+}
+.products .listWrap .list {
+  position: relative;
+  overflow: hidden;
+}
+.products .listWrap .list li {
+  display: none;
+  position: absolute;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  width: 100%;
+}
+.products .listWrap .list li .oneWrap {
+  position: relative;
+  float: left;
+  width: 50%;
+}
+.products .listWrap .list li .oneWrap div.one {
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+}
+.products .listWrap .list li .oneWrap div.one img {
+  width: 100%;
+  height: 65px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  /* 老的 Firefox */
+}
+.products .listWrap .list li .oneWrap div.one .spot {
+  position: absolute;
+  display: none;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #a63737;
+  color: white;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  /* 老的 Firefox */
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.products .listWrap .list li .oneWrap div.one .title {
+  line-height: 20px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.products .listWrap .list li .oneWrap div.one .remark {
+  font-size: 1.1rem;
+  color: #dddddd;
+  font-weight: 100;
+}
+.products .listWrap .list li .oneWrap div.one .value {
+  display: inline-block;
+  height: 20px;
+  font-size: 1.1rem;
+}
+.products .listWrap .list li .oneWrap div.one .value b {
+  color: #a63737;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+.products .listWrap .list li .oneWrap div.one .reduce {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 12.5px;
+  -moz-border-radius: 12.5px;
+  /* 老的 Firefox */
+  border: 1px solid #dddddd;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.products .listWrap .list li.selected {
+  display: block;
+}
+#screen-2 .header {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 1.4rem;
+}
+#screen-2 .order {
+  background-color: white;
+  border-top: 1px solid #dddddd;
+  margin-bottom: 30px;
+}
+#screen-2 .field {
+  height: 30px;
+  border-bottom: 1px solid #dddddd;
+  line-height: 30px;
+  font-size: 1.8rem;
+  padding: 8px;
+}
+#screen-2 .field .name {
+  margin-left: 10px;
+}
+#screen-2 .field .order-c-wrap {
+  float: right;
+}
+#screen-2 .field .price {
+  color: #a63737;
+  margin-right: 10px;
+}
+#screen-2 .field .reduce {
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  /* 老的 Firefox */
+  border: 1px solid #dddddd;
+}
+#screen-2 .field .add {
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  /* 老的 Firefox */
+  border: 1px solid #dddddd;
+}
+#screen-2 .field .count {
+  float: right;
+  width: 20px;
+  text-align: center;
+}
+.mySubmit {
+  height: 40px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #a63737;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  /* 老的 Firefox */
+  text-align: center;
+  font-size: 1.8rem;
+  color: white;
+  line-height: 40px;
+}
+#screen-3 .header-3 {
+  height: 30px;
+  padding-left: 10px;
+  font-size: 1.4rem;
+  line-height: 30px;
+}
+#screen-3 .fieldWrap {
+  border-top: 1px solid #dddddd;
+  margin-bottom: 30px;
+}
+#screen-3 .field {
+  font-size: 1.6rem;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #dddddd;
+  padding: 3px 10px;
+}
+#screen-3 .field span {
+  margin: 0 10px ;
+  display: inline-block;
+}
+#screen-3 .field input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: inline-block;
+  height: 95%;
+  font-size: 1.6rem;
+  line-height: 40px;
+  width: 75%;
+}
+#screen-3 .warningInfo {
+  font-size: 1.5rem;
+  padding: 5px 10px 0px 22px;
+  line-height: 30px;
+  color: red;
+}
+#wrap {
+  overflow: hidden;
+}
+#screen-1 {
+  display: block;
+}
+#screen-2 {
+  display: none ;
+}
+#screen-3 {
+  display: none;
+}
+#back-2 {
+  display: none;
+}
+#back-3 {
+  display: none;
+}

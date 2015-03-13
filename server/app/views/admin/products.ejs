@@ -1,0 +1,238 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>后台管理-商品管理</title>
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">你好，黄文杰</a></li>
+            <li><a href="logouting">注销</a></li>
+            <li><a href="#">关于</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="addPruduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加商品</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="addProduct" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">名称</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="name">
+            </div>
+          </div>
+           <div class="form-group">
+            <label for="" class="col-sm-3 control-label">图片</label>
+            <div class="col-sm-6">
+              <input type="file" class="form-control" id="files" name="img">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">价格</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="value">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">描述</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">货存</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="inventory">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">所属分类</label>
+            <div class="col-sm-3">
+              <select class="form-control" name="classifyId">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="productConfirm">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updatePruduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" >修改商品</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="updateProductForm">
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">名称</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="name">
+            </div>
+          </div>
+           <div class="form-group">
+            <label for="" class="col-sm-3 control-label">图片</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="img">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">价格</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="value">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">描述</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">描述</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="inventory">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-sm-3 control-label">所属分类</label>
+            <div class="col-sm-3">
+              <select class="form-control" name="classifyId">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="updateProductConfirm">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+            <li ><a href="index">数据统计<span class="sr-only">(current)</span></a></li>
+            <li><a href="orders">订单管理 </a></li>
+             <li class="active"><a href="products">商品管理 </a></li>
+            <li><a href="#">顾客管理</a></li>
+          </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h2 class="sub-header">商品列表</h2>
+          <div>
+            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#addPruduct">添加商品</button>
+            
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>商品名字</th>
+                  <th>展示图片</th>
+                  <th>价格</th>
+                  <th>描述</th>
+                  <th>货存</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% products.forEach(function(product){ %>
+                  <tr data-id="<%= product._id %>">
+                  <td name="name"><%= product.name %> </td>
+                  <td name="img"><img src="../images/<%= product.img %>" style="height: 100px"></td>
+                  <td name="value"><%= product.value %></td>
+                  <td name="description"><%= product.description %></td>
+                  <td name="inventory"><%= product.inventory %></td>
+                  <td><button type="button" class="btn btn-link btn-sm updateModal" data-toggle="modal" data-target="#updatePruduct">修改</button>
+                      <button type="button" class="btn btn-link btn-sm delProduct" data-id="<%= product._id %>">删除</button>
+                  </td>
+                </tr>
+               <% }) %>
+                
+              </tbody>
+            </table>
+          </div>
+          <!--
+          <nav>
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          -->
+        </div>
+  </div>
+</div>
+
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/adminProduct.js"></script>
+</body>
+</html>

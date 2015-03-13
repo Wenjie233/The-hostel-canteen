@@ -1,0 +1,286 @@
+@blue: #03a9f4;
+@qianblue: #26ffff;
+@shenblue: #0c7f7f;
+@white: #fafafa;
+@gray: #999999;
+@font-white: #ffffff;
+@name: #455a64;
+@price: #f44336;
+@info: #cfd8dc;
+@red: #f44336;
+@import "font-face";
+@import "shop-cart";
+
+#shop-info{
+	display: none;
+	float: left;
+	width: 78%;
+	height: 100%;
+	text-align: right;
+}
+#home {
+	margin:0 auto;
+	max-width: 800px;
+	header{
+		background: @blue;
+		height: 128px;
+		box-shadow: 0px 2px 5px #888888;
+		#logo {
+			float: left;
+			width: 16%;
+			height: 100%;
+			text-align: center;
+			padding-top: 20px;
+			i {
+				font-size: 18px;
+				line-height: 24px;
+			}
+			.userheadimg {
+				width: 80%;
+				box-shadow: 0px 0px 5px #888888;
+			}
+		}
+		#logo-right {
+			position: relative;
+			float: right;
+			width: 84%;
+			height: 100%;
+			color: @font-white;
+			.title {
+				margin-top: 20px;
+				font-size: 24px;	
+				height: 24px;
+			}
+			.classify {
+				margin-top: 15px;
+				width: 40%;
+				font-size: 16px;
+				div {
+					height: 40px;
+					line-height: 40px;
+					.arrow-down {
+						color:@white;
+						font-size: 14px;
+					}
+					.arrow-up {
+						display: none;
+						font-size: 10px;
+					}
+				}
+				.out-classify{
+					display: none;
+					list-style-type:none;
+					margin: 0;
+					padding-left: 0px;
+					padding-bottom: 5px;
+					a li {
+						color:#000000;
+						height: 30px;
+						line-height: 30px;
+						font-size: 14px;
+						text-align: center;
+						&.selected {
+							background-color: @gray;
+						}
+					}
+				}
+
+
+			
+
+				&.pop{
+					background-color: @white;
+					box-shadow: 0px 0px 10px #000000;
+					border-radius: 5px;
+					color: #000000;
+					position: relative;
+					z-index: 99;
+					font-size: 14px;
+					font-weight: bold;
+					div {
+						text-align: center;
+						.arrow-down {
+							display: none;
+						}
+						.arrow-up {
+							display: inline-block;
+						}
+					}
+					.out-classify {
+						display: block;
+					}
+
+
+
+				}
+			}
+
+			.mask {
+					display: none;
+					position: fixed;
+					z-index: 98;
+					width: 100%;
+					height: 100%;
+					top: 0px;
+					left: 0px;
+					background-color: rgba(0, 0, 0, 0.25)
+
+				}
+			
+			.shop {
+				position: absolute;
+				bottom: 0px;
+				height: 26px;
+				line-height: 26px;
+				font-size: 12px;
+				width: 100%;
+				.info {
+					float: left;
+					width: 78%;
+					height: 100%;
+					text-align: right;
+				}
+				#cart {
+					position: absolute;
+					box-shadow: 0px 0px 20px #0D0002;
+					
+					transition: all 2s;
+					right: 4%;
+					background-color: @qianblue;
+					border-radius: 20px;
+					line-height: 40px;
+					height: 40px;
+					width: 40px;
+					text-align: center;
+					i {
+						color: @shenblue;
+						font-size: 26px;
+						
+					}
+					&.ban {
+						box-shadow: 0px 0px 0px #888888;
+						i {
+							color: #ffffff;
+							font-size: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#content {
+		margin-bottom: 20px;
+		.title {
+			padding-left: 16%;
+			color: @gray;
+			font-size: 14px;
+			height: 30px;
+			line-height: 30px;
+			font-weight: bold;
+		}
+		.pro-group {
+			padding: 0;
+			margin: 0;
+		}
+
+		.all-pro-wrap {
+			display: none;
+			&.selected {
+				display: block;
+			}
+			.pro-wrap {
+				float: left;
+				width: 50%;
+				margin-bottom: 10px;
+				.pro {
+					position: relative;
+					box-shadow: 0px 0px 5px #888888;
+					border-radius: 2px;
+					background-color: @info;
+					width: 92%;
+					margin: auto;
+					.shade {
+						display: none;
+						position: absolute;
+						height: 100%;
+						width: 100%;
+						background-color: rgba(0, 0, 0, 0.3);
+						.del{
+							position: absolute;
+							right: 10%;
+							top: 5%;
+							height: 20px;
+							width: 20px;
+							color: @white;
+						}
+						div {
+							position: absolute;
+							right: 0;
+							left: 0;
+							top: 0;
+							bottom: 0;
+							margin: auto;
+							width: 50px;
+							height: 50px;
+							border-radius:25px;
+							background-color: @red;
+							color:#ffffff;
+							text-align: center;
+							line-height: 50px;
+							font-size: 25px;
+							font-weight: bolder;
+						}
+					}
+
+					.img {
+						width: 100%;
+					}
+
+					.info {
+						position: relative;
+						color: @name;
+						height: 40px;
+						line-height: 20px;
+						font-size: 10px;
+						padding: 4px 8px;
+						.price {
+							position: absolute;
+							top: 50%;
+							right:8px;
+							margin-left: 3%;
+							b {
+							color: @price;
+							}
+						}
+
+					} 
+					&.show {
+						.shade {
+							display: block;
+						}
+					}
+				}
+			}
+
+			&:after {
+				content: "."; 
+				display: block;
+				height: 0; 
+				clear: both; 
+				visibility: hidden;
+			}
+		}
+	}
+
+	footer {
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		font-size: 12px;
+		color: @gray;
+		padding-bottom: 10px;
+	}
+	
+}
+
